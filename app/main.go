@@ -42,7 +42,7 @@ func run() error {
 		ReadTimeout:  time.Second * 10,
 		WriteTimeout: time.Second * 10,
 		IdleTimeout:  time.Second * 10,
-		Addr:         config.Web.Host + ":" + config.Web.Port,
+		Addr:         ":" + config.Web.Port,
 		Handler:      router,
 	}
 

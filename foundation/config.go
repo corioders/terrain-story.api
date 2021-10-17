@@ -11,7 +11,6 @@ func LoadConfig() (*Config, error) {
 	fmt.Println(os.Environ())
 	config := &Config{}
 
-	flag.StringVar(&config.Web.Host, "host", "localhost", "Server host.")
 	flag.StringVar(&config.Web.Port, "port", "8080", "Server port.")
 
 	flag.StringVar(&config.Qr.QrCodesJsonPath, "qrCodesJson", "../data/qr.json", "Qr codes json path.")
@@ -40,7 +39,6 @@ func (c *Config) validate() error {
 }
 
 type WebConfig struct {
-	Host string
 	Port string
 }
 

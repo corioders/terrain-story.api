@@ -20,5 +20,5 @@ steps:
       - "-c"
       - |-
         gcloud run deploy api${_MODE} \
-          --port 80 --set-env-vars HOST=api${_MODE}.terrainstory.com \
+          --port 80 \
           --allow-unauthenticated --region europe-central2 --image $(cat /workspace/.cloudbuild/name):$(cat /workspace/.cloudbuild/tag)
