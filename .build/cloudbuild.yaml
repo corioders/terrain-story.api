@@ -1,0 +1,24 @@
+steps:
+  # Build and push api image.
+  - name: "gcr.io/cloud-builders/docker"
+    entrypoint: "bash"
+    args:
+      - "-c"
+      - |-
+        mkdir /workspace/.cloudbuild
+
+        echo europe-central2-docker.pkg.dev/core-folio-327613/cloud-run-images/api${_MODE} > /workspace/.cloudbuild/name
+        echo api_${SHORT_SHA} > /workspace/.cloudbuild/tag
+
+        docker build -t $(cat /workspace/.cloudbuild/name):$(cat /workspace/.cloudbuild/tag) .
+        docker push $(cat /workspace/.cloudbuild/name)
+
+  # Release new version of image.
+  - name: "gcr.io/cloud-builders/gcloud"
+    entrypoint: "bash"
+    args:
+      - "-c"
+      - |-
+        gcloud run deploy api${_MODE} \
+          --port 80 --set-env-vars PORT=80,HOST=api${_MODE}.terrainstory.com \
+          --allow-unauthenticated --region europe-central2 --image $(cat /workspace/.cloudbuild/name):$(cat /workspace/.cloudbuild/tag)

@@ -1,0 +1,12 @@
+## Global
+# Dotenv environment variables file
+.env
+
+# Logs
+logs
+*.log
+
+## System Files
+
+.DS_Store
+Thumbs.db
