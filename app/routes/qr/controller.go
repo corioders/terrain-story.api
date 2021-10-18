@@ -56,6 +56,6 @@ func (c *Controller) RedirectHandler(ctx context.Context, rw http.ResponseWriter
 		return nil
 	}
 
-	http.Redirect(rw, r, redirectionUrl, http.StatusMovedPermanently)
+	http.Redirect(rw, r, redirectionUrl, http.StatusFound)
 	return nil
 }
