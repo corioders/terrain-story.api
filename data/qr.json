@@ -1,39 +1,39 @@
 [
   {
     "uuid": "78570d5f-ed90-4eba-9461-f11db267a460",
-    "to": "https://dev.terrainstory.com"
+    "to": "https://terrainstory.com"
   },
 
   {
     "uuid": "c272f7ea-24f4-45e8-86e7-59f077c1b58a",
-    "to": "https://dev.terrainstory.com/poszukiwacze-camienia/#/archeolog"
+    "to": "https://terrainstory.com/poszukiwacze-camienia/#/archeolog"
   },
   {
     "uuid": "5d1306c1-b92c-4a27-b12c-2f57bf66c598",
-    "to": "https://dev.terrainstory.com/poszukiwacze-camienia/#/tancerz"
+    "to": "https://terrainstory.com/poszukiwacze-camienia/#/tancerz"
   },
   {
     "uuid": "aa36cb3c-7c96-470a-8867-e1b8d8ebd974",
-    "to": "https://dev.terrainstory.com/poszukiwacze-camienia/#/haker"
+    "to": "https://terrainstory.com/poszukiwacze-camienia/#/haker"
   },
   {
     "uuid": "3062f083-523f-4d5b-9001-250303668d00",
-    "to": "https://dev.terrainstory.com/poszukiwacze-camienia/#/inspektor"
+    "to": "https://terrainstory.com/poszukiwacze-camienia/#/inspektor"
   },
   {
     "uuid": "5839e242-ccc9-486a-b9c0-4778357861e6",
-    "to": "https://dev.terrainstory.com/poszukiwacze-camienia/#/mag"
+    "to": "https://terrainstory.com/poszukiwacze-camienia/#/mag"
   },
   {
     "uuid": "1e2bedac-eed9-4974-8667-e50796fa072a",
-    "to": "https://dev.terrainstory.com/poszukiwacze-camienia/#/ksiezniczka"
+    "to": "https://terrainstory.com/poszukiwacze-camienia/#/ksiezniczka"
   },
   {
     "uuid": "c9043d2f-b43e-46c7-84e2-20eb5d81876d",
-    "to": "https://dev.terrainstory.com/poszukiwacze-camienia/#/turysta"
+    "to": "https://terrainstory.com/poszukiwacze-camienia/#/turysta"
   },
   {
     "uuid": "675af230-c57e-47cc-9070-0d1177a7ae9b",
-    "to": "https://dev.terrainstory.com/poszukiwacze-camienia/#/skarbek"
+    "to": "https://terrainstory.com/poszukiwacze-camienia/#/skarbek"
   }
 ]
