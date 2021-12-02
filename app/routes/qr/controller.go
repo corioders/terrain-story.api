@@ -2,43 +2,49 @@ package qr
 
 import (
 	"context"
-	"encoding/json"
 	"net/http"
 	"os"
 
 	"github.com/corioders/terrain-story.api/foundation"
+	"github.com/corioders/terrain-story.api/model/gamesCodeModel"
 	"github.com/dimfeld/httptreemux"
 )
 
-type qrCodesMap map[string]string
-
-type qrCodesJson []struct {
-	Uuid string `json:"uuid"`
-	To   string `json:"to"`
-}
+type codesMapT map[string]string
 
 type Controller struct {
-	qrCodes qrCodesMap
+	qrCodes codesMapT
 }
 
 func NewController(qrConfig foundation.QrConfig) (*Controller, error) {
-	qrCodesBytes, err := os.ReadFile(qrConfig.QrCodesJsonPath)
+	gamesCodeBytes, err := os.ReadFile(qrConfig.GamesCodeJsonPath)
 	if err != nil {
 		return nil, err
 	}
 
-	qrCodesJ := qrCodesJson{}
-	err = json.Unmarshal(qrCodesBytes, &qrCodesJ)
+	terrainGames, err := gamesCodeModel.Unmarshal(gamesCodeBytes)
 	if err != nil {
 		return nil, err
 	}
 
-	qrCodesM := qrCodesMap{}
-	for _, qrCode := range qrCodesJ {
-		qrCodesM[qrCode.Uuid] = qrCode.To
+	codesMap := codesMapT{}
+	for _, terrainGame := range terrainGames {
+		noAddons := len(terrainGame.Addons) == 0
+		if noAddons {
+			for _, code := range terrainGame.Codes {
+				codesMap[code.Uuid] = code.To
+			}
+		} else {
+			for _, addon := range terrainGame.Addons {
+				for _, code := range terrainGame.Codes {
+					// No need to normalize addon.Add as it is automatically escaped by httptreemux.ContextParams(ctx).
+					codesMap[code.Uuid+addon.Add] = code.To + addon.Add
+				}
+			}
+		}
 	}
 
-	return &Controller{qrCodes: qrCodesM}, nil
+	return &Controller{qrCodes: codesMap}, nil
 }
 
 // RedirectHandler expects to be mounted with path that has one url param "uuid"

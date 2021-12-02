@@ -53,7 +53,6 @@ func run() error {
 	errChan := make(chan error)
 
 	go func() {
-		fmt.Println(app.GetConfig())
 		err = server.ListenAndServe()
 		if err != nil {
 			errChan <- errors.WithStack(err)

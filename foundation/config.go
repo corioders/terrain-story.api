@@ -2,18 +2,15 @@ package foundation
 
 import (
 	"flag"
-	"fmt"
-	"os"
 )
 
 // LoadConfig loads config from flags provided to the process.
 func LoadConfig() (*Config, error) {
-	fmt.Println(os.Environ())
 	config := &Config{}
 
 	flag.StringVar(&config.Web.Port, "port", "8080", "Server port.")
 
-	flag.StringVar(&config.Qr.QrCodesJsonPath, "qrCodesJson", "../data/qr.json", "Qr codes json path.")
+	flag.StringVar(&config.Qr.GamesCodeJsonPath, "gamesCode", "../data/gamesCode.jsonc", "Games code json path.")
 
 	flag.Parse()
 
@@ -47,5 +44,5 @@ func (c *WebConfig) validate() error {
 }
 
 type QrConfig struct {
-	QrCodesJsonPath string
+	GamesCodeJsonPath string
 }

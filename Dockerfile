@@ -11,4 +11,4 @@ FROM alpine
 COPY ./data /data
 COPY --from=builder /api /api
 
-CMD ["sh", "-c", "/api --port=${PORT} --qrCodesJson=/data/qr.json"]
+CMD ["sh", "-c", "/api --port=${PORT} --gamesCode=/data/gamesCode.jsonc"]

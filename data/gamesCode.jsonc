@@ -1,0 +1,102 @@
+{
+  // poszukiwacze camienia game
+  "poszukiwacze camienia": {
+    "codes": [
+      {
+        "name": "strona główna",
+        "uuid": "78570d5f-ed90-4eba-9461-f11db267a460",
+        "to": "https://terrainstory.com/poszukiwacze-camienia/#/"
+      },
+      {
+        "name": "archeolog",
+        "uuid": "c272f7ea-24f4-45e8-86e7-59f077c1b58a",
+        "to": "https://terrainstory.com/poszukiwacze-camienia/#/archeolog"
+      },
+      {
+        "name": "tancerz",
+        "uuid": "5d1306c1-b92c-4a27-b12c-2f57bf66c598",
+        "to": "https://terrainstory.com/poszukiwacze-camienia/#/tancerz"
+      },
+      {
+        "name": "haker",
+        "uuid": "aa36cb3c-7c96-470a-8867-e1b8d8ebd974",
+        "to": "https://terrainstory.com/poszukiwacze-camienia/#/haker"
+      },
+      {
+        "name": "inspektor",
+        "uuid": "3062f083-523f-4d5b-9001-250303668d00",
+        "to": "https://terrainstory.com/poszukiwacze-camienia/#/inspektor"
+      },
+      {
+        "name": "mag",
+        "uuid": "5839e242-ccc9-486a-b9c0-4778357861e6",
+        "to": "https://terrainstory.com/poszukiwacze-camienia/#/mag"
+      },
+      {
+        "name": "księżniczka",
+        "uuid": "1e2bedac-eed9-4974-8667-e50796fa072a",
+        "to": "https://terrainstory.com/poszukiwacze-camienia/#/ksiezniczka"
+      },
+      {
+        "name": "turysta",
+        "uuid": "c9043d2f-b43e-46c7-84e2-20eb5d81876d",
+        "to": "https://terrainstory.com/poszukiwacze-camienia/#/turysta"
+      },
+      {
+        "name": "skarbek",
+        "uuid": "675af230-c57e-47cc-9070-0d1177a7ae9b",
+        "to": "https://terrainstory.com/poszukiwacze-camienia/#/skarbek"
+      }
+    ]
+  },
+  // santa in trouble game 
+  "santa in trouble": {
+    "addons": [
+      {
+        "name": "galeria katowicka",
+        "add": "?p=gk"
+      },
+      {
+        "name": "pik",
+        "add": "?p=pik"
+      }
+    ],
+    "codes": [
+      {
+        "name": "strona główna",
+        "uuid": "a8112d6f-b5c6-452e-9dcf-684c1e94710c",
+        "to": "https://terrainstory.com/santa-in-trouble/#/"
+      },
+      {
+        "name": "quiz",
+        "uuid": "dd9ce3d9-f83e-4ae9-9451-75f79b2a1e11",
+        "to": "https://terrainstory.com/santa-in-trouble/#/quiz"
+      },
+      {
+        "name": "festivals matching",
+        "uuid": "df9796ec-6113-40ba-b68e-4a844e4f1a2c",
+        "to": "https://terrainstory.com/santa-in-trouble/#/festivals-matching"
+      },
+      {
+        "name": "gaps",
+        "uuid": "4e03eda8-aa8c-4a08-a36c-8f072c31ab33",
+        "to": "https://terrainstory.com/santa-in-trouble/#/gaps"
+      },
+      {
+        "name": "question tag",
+        "uuid": "6fc8e495-1e7f-4ae6-8b1e-9e3a3616b071",
+        "to": "https://terrainstory.com/santa-in-trouble/#/question-tag"
+      },
+      {
+        "name": "carols",
+        "uuid": "c1262c25-4e7c-45c0-a160-d2e73f93b1d4",
+        "to": "https://terrainstory.com/santa-in-trouble/#/carols"
+      },
+      {
+        "name": "rebus",
+        "uuid": "e3917c2e-f524-4730-be7d-dc3598002ae4",
+        "to": "https://terrainstory.com/santa-in-trouble/#/rebus"
+      }
+    ]
+  }
+}

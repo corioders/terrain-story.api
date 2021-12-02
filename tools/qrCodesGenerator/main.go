@@ -1,55 +1,97 @@
 package main
 
 import (
-	"encoding/json"
 	"os"
-	"strconv"
+	"path"
 
+	"github.com/corioders/terrain-story.api/model/gamesCodeModel"
 	"github.com/skip2/go-qrcode"
 )
 
-type qrCodeJson struct {
-	Uuid string `json:"uuid"`
-	To   string `json:"to"`
-}
-
-type qrCodesJson []qrCodeJson
+const rootCodesPath = "./codes"
 
 func main() {
-	qrCodesBytes, err := os.ReadFile("../../data/qr.json")
+	gamesCodeBytes, err := os.ReadFile("../../data/gamesCode.jsonc")
 	if err != nil {
 		panic(err)
 	}
 
-	qrCodes := qrCodesJson{}
-	err = json.Unmarshal(qrCodesBytes, &qrCodes)
+	terrainGames, err := gamesCodeModel.Unmarshal(gamesCodeBytes)
 	if err != nil {
 		panic(err)
 	}
 
-	err = os.RemoveAll("./codes")
+	err = os.RemoveAll(rootCodesPath)
 	if err != nil {
 		panic(err)
 	}
 
-	err = os.MkdirAll("./codes", os.ModePerm)
+	err = mkdirAll(rootCodesPath)
 	if err != nil {
 		panic(err)
 	}
 
-	for i, qrCode := range qrCodes {
-		image, err := encode("https://api.terrainstory.com/qr/", qrCode.Uuid)
+	for terrainGameName, terrainGame := range terrainGames {
+		rootFolder := path.Join(rootCodesPath, terrainGameName)
+		err = mkdirAll(rootFolder)
 		if err != nil {
 			panic(err)
 		}
 
-		err = os.WriteFile("./codes/"+strconv.Itoa(i+1)+".png", image, os.ModePerm)
+		err = generateTerrainGame(rootFolder, terrainGame)
 		if err != nil {
 			panic(err)
 		}
 	}
 }
 
-func encode(base, uuid string) ([]byte, error) {
+func generateTerrainGame(rootFolder string, terrainGame gamesCodeModel.TerrainGameJson) error {
+	noAddons := len(terrainGame.Addons) == 0
+
+	if noAddons {
+		for _, code := range terrainGame.Codes {
+			err := generateCode(rootFolder, code)
+			if err != nil {
+				return err
+			}
+		}
+
+		return nil
+	}
+
+	for _, addon := range terrainGame.Addons {
+		addonFolder := path.Join(rootFolder, addon.Name)
+		err := mkdirAll(addonFolder)
+		if err != nil {
+			return err
+		}
+
+		for _, code := range terrainGame.Codes {
+			code.Uuid += gamesCodeModel.NormalizeAddonAdd(addon.Add)
+			err := generateCode(addonFolder, code)
+			if err != nil {
+				return err
+			}
+		}
+	}
+
+	return nil
+}
+
+func generateCode(rootFolder string, code gamesCodeModel.CodeJson) error {
+	image, err := encodeQrCode("https://api.terrainstory.com/qr/", code.Uuid)
+	if err != nil {
+		return err
+	}
+
+	err = os.WriteFile(path.Join(rootFolder, code.Name)+".png", image, os.ModePerm)
+	if err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func encodeQrCode(base, uuid string) ([]byte, error) {
 	return qrcode.Encode(base+uuid, qrcode.Highest, 3000)
 }
