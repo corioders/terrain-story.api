@@ -14,7 +14,10 @@ type CodeJson struct {
 
 type AddonJson struct {
 	Name string `json:"name"`
-	Add  string `json:"add"`
+	Add  struct {
+		Uuid string `json:"uuid"`
+		To   string `json:"to"`
+	} `json:"add"`
 }
 
 type TerrainGameJson struct {
@@ -31,9 +34,16 @@ func Unmarshal(data []byte) (TerrainGamesJson, error) {
 		return nil, err
 	}
 
-	return terrainGamesJson, nil
-}
+	for terrainGameKey := range terrainGamesJson {
+		addons := terrainGamesJson[terrainGameKey].Addons
+		if len(addons) == 0 {
+			continue
+		}
 
-func NormalizeAddonAdd(add string) string {
-	return url.PathEscape(add)
+		for addonI := 0; addonI < len(addons); addonI++ {
+			addons[addonI].Add.Uuid = url.PathEscape(addons[addonI].Add.Uuid)
+		}
+	}
+
+	return terrainGamesJson, nil
 }

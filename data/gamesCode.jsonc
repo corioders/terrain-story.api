@@ -54,11 +54,17 @@
     "addons": [
       {
         "name": "galeria katowicka",
-        "add": "?p=gk"
+        "add": {
+          "uuid": "?p=gk",
+          "to": "?p=gk"
+        }
       },
       {
         "name": "pik",
-        "add": "?p=pik"
+        "add": {
+          "uuid": "?p=pik",
+          "to": "?p=pik"
+        }
       }
     ],
     "codes": [
