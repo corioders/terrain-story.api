@@ -3,6 +3,7 @@ package qr
 import (
 	"context"
 	"net/http"
+	"net/url"
 	"os"
 
 	"github.com/corioders/terrain-story.api/foundation"
@@ -37,8 +38,13 @@ func NewController(qrConfig foundation.QrConfig) (*Controller, error) {
 		} else {
 			for _, addon := range terrainGame.Addons {
 				for _, code := range terrainGame.Codes {
-					// No need to normalize addon.Add as it is automatically escaped by httptreemux.ContextParams(ctx).
-					codesMap[code.Uuid+addon.Add] = code.To + addon.Add
+					// We need to unescape addon.Add as it is automatically escaped by httptreemux.ContextParams(ctx).
+					unescapedAdd, err := url.PathUnescape(addon.Add.Uuid)
+					if err != nil {
+						return nil, err
+					}
+
+					codesMap[code.Uuid+unescapedAdd] = code.To + addon.Add.To
 				}
 			}
 		}

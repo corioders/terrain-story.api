@@ -67,7 +67,7 @@ func generateTerrainGame(rootFolder string, terrainGame gamesCodeModel.TerrainGa
 		}
 
 		for _, code := range terrainGame.Codes {
-			code.Uuid += gamesCodeModel.NormalizeAddonAdd(addon.Add)
+			code.Uuid += addon.Add.Uuid
 			err := generateCode(addonFolder, code)
 			if err != nil {
 				return err
