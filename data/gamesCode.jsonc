@@ -65,6 +65,13 @@
           "uuid": "?p=pik",
           "to": "?p=pik"
         }
+      },
+      {
+        "name": "SP42 Kato",
+        "add": {
+          "uuid": "sp42K",
+          "to": "?p=42"
+        }
       }
     ],
     "codes": [
