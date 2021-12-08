@@ -1,4 +1,14 @@
 {
+  // general codes for terrain-story
+  "general codes": {
+    "codes": [
+      {
+        "name": "how to play poster",
+        "to": "https://terrainstory.com/santa-in-trouble/#/",
+        "uuid": "f5b80e83-9d2b-4b11-82c4-04f669c69738"
+      }
+    ]
+  },
   // poszukiwacze camienia game
   "poszukiwacze camienia": {
     "codes": [
