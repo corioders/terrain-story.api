@@ -82,6 +82,13 @@
           "uuid": "sp42K",
           "to": "?p=42"
         }
+      },
+      {
+        "name": "mickiewicz katowice",
+        "add": {
+          "uuid": "lo3K",
+          "to": "?p=mic"
+        }
       }
     ],
     "codes": [
