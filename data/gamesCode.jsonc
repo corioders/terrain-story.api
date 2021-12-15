@@ -89,6 +89,13 @@
           "uuid": "lo3K",
           "to": "?p=mic"
         }
+      },
+      {
+        "name": "Zespół Szkół Technicznych i Ogólnokształcących Nr 2 katowice",
+        "add": {
+          "uuid": "zstio2K",
+          "to": "?p=zto2K"
+        }
       }
     ],
     "codes": [
