@@ -59,6 +59,7 @@
       }
     ]
   },
+
   // santa in trouble game 
   "santa in trouble": {
     "addons": [
@@ -133,6 +134,17 @@
         "name": "rebus",
         "uuid": "e3917c2e-f524-4730-be7d-dc3598002ae4",
         "to": "https://terrainstory.com/santa-in-trouble/#/rebus"
+      }
+    ]
+  },
+
+  // 
+  "pomóż Abelardowi": {
+    "codes": [
+      {
+        "name": "strona główna",
+        "uuid": "14a574c2-72e7-40ea-80e4-ab54cc3ae67c",
+        "to": "https://terrainstory.com/pomoz-abelardowi/#/"
       }
     ]
   }
