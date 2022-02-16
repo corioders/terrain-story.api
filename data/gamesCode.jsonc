@@ -157,11 +157,6 @@
     ],
     "codes": [
       {
-        "name": "strona główna",
-        "uuid": "14a574c2-72e7-40ea-80e4-ab54cc3ae67c",
-        "to": "https://terrainstory.com/pomoz-abelardowi/#/"
-      },
-      {
         "name": "Kościół Garnizonowy - jacobson",
         "uuid": "c272f7ea-24f4-45e8-86e7-59f077c1b58a",
         "to": "https://terrainstory.com/pomoz-abelardowi/#/jacobson"
