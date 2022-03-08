@@ -12,12 +12,31 @@ type CodeJson struct {
 	To   string `json:"to"`
 }
 
+type Background string
+
+const DefaultBackground = NoneBackground
+const (
+	NoneBackground   Background = "none"
+	NormalBackground Background = "normal.png"
+	CasualBackground Background = "casual.png"
+)
+
+var AllBackgrounds = []Background{NormalBackground, CasualBackground}
+
 type AddonJson struct {
-	Name string `json:"name"`
-	Add  struct {
+	Name       string     `json:"name"`
+	Background Background `json:"background"`
+	Add        struct {
 		Uuid string `json:"uuid"`
 		To   string `json:"to"`
 	} `json:"add"`
+}
+
+func (a AddonJson) GetBackground() Background {
+	if a.Background == "" {
+		return DefaultBackground
+	}
+	return a.Background
 }
 
 type TerrainGameJson struct {

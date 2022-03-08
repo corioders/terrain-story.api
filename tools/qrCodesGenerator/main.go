@@ -1,8 +1,15 @@
 package main
 
 import (
+	"bytes"
+	"embed"
+	"fmt"
+	"image"
+	"image/png"
 	"os"
 	"path"
+
+	"golang.org/x/image/draw"
 
 	"github.com/corioders/terrain-story.api/model/gamesCodeModel"
 	"github.com/skip2/go-qrcode"
@@ -50,7 +57,7 @@ func generateTerrainGame(rootFolder string, terrainGame gamesCodeModel.TerrainGa
 
 	if noAddons {
 		for _, code := range terrainGame.Codes {
-			err := generateCode(rootFolder, code)
+			err := generateCode(rootFolder, code, gamesCodeModel.DefaultBackground)
 			if err != nil {
 				return err
 			}
@@ -68,7 +75,7 @@ func generateTerrainGame(rootFolder string, terrainGame gamesCodeModel.TerrainGa
 
 		for _, code := range terrainGame.Codes {
 			code.Uuid += addon.Add.Uuid
-			err := generateCode(addonFolder, code)
+			err := generateCode(addonFolder, code, addon.GetBackground())
 			if err != nil {
 				return err
 			}
@@ -78,13 +85,74 @@ func generateTerrainGame(rootFolder string, terrainGame gamesCodeModel.TerrainGa
 	return nil
 }
 
-func generateCode(rootFolder string, code gamesCodeModel.CodeJson) error {
-	image, err := encodeQrCode("https://api.terrainstory.com/qr/", code.Uuid)
+//go:embed background/*
+var backgroundFS embed.FS
+
+type backgroundDetails struct {
+	img      image.Image
+	codeSize int
+	pt       image.Point
+}
+
+var backgroundMap = map[gamesCodeModel.Background]*backgroundDetails{
+	gamesCodeModel.NormalBackground: {
+		codeSize: 630,
+		pt:       image.Pt(910, 1455),
+	},
+	gamesCodeModel.CasualBackground: {
+		codeSize: 550,
+		pt:       image.Pt(940, 700),
+	},
+}
+
+func init() {
+	for _, b := range gamesCodeModel.AllBackgrounds {
+		backgroundPngBytes, err := backgroundFS.ReadFile(path.Join("background", string(b)))
+		if err != nil {
+			panic(err)
+		}
+
+		backgroundImage, err := png.Decode(bytes.NewReader(backgroundPngBytes))
+		if err != nil {
+			panic(err)
+		}
+
+		if backgroundMap[b] == nil {
+			panic(fmt.Sprintf("You have not provided details for background: %s", b))
+		}
+		backgroundMap[b].img = backgroundImage
+	}
+}
+
+func generateCode(rootFolder string, code gamesCodeModel.CodeJson, background gamesCodeModel.Background) error {
+	size := 3000
+	if background != gamesCodeModel.NoneBackground {
+		size = backgroundMap[background].codeSize
+	}
+
+	codeImage, err := encodeQrCode("https://api.terrainstory.com/qr/", code.Uuid, size)
 	if err != nil {
 		return err
 	}
 
-	err = os.WriteFile(path.Join(rootFolder, code.Name)+".png", image, os.ModePerm)
+	if background != gamesCodeModel.NoneBackground {
+		backgroundDetails := backgroundMap[background]
+		resultImage := image.NewNRGBA(backgroundDetails.img.Bounds())
+
+		draw.Copy(resultImage, image.Pt(0, 0), backgroundDetails.img, backgroundDetails.img.Bounds(), draw.Over, nil)
+		draw.Copy(resultImage, backgroundDetails.pt, codeImage, codeImage.Bounds(), draw.Over, nil)
+
+		codeImage = resultImage
+	}
+
+	encoder := png.Encoder{CompressionLevel: png.BestCompression}
+	buffer := bytes.Buffer{}
+	err = encoder.Encode(&buffer, codeImage)
+	if err != nil {
+		return err
+	}
+
+	err = os.WriteFile(path.Join(rootFolder, code.Name)+".png", buffer.Bytes(), os.ModePerm)
 	if err != nil {
 		return err
 	}
@@ -92,6 +160,11 @@ func generateCode(rootFolder string, code gamesCodeModel.CodeJson) error {
 	return nil
 }
 
-func encodeQrCode(base, uuid string) ([]byte, error) {
-	return qrcode.Encode(base+uuid, qrcode.Highest, 3000)
+func encodeQrCode(base, uuid string, size int) (image.Image, error) {
+	q, err := qrcode.New(base+uuid, qrcode.Highest)
+	if err != nil {
+		return nil, err
+	}
+
+	return q.Image(size), nil
 }

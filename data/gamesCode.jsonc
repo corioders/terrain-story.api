@@ -156,12 +156,14 @@
       },
       {
         "name": "8lo katowice (pik)",
+        "background": "casual.png",
         "add": {
           "uuid": "pik",
           "to": "?p=pik"
         }
       },
       {
+        "background": "casual.png",
         "name": "SP42 Kato",
         "add": {
           "uuid": "sp42K",
