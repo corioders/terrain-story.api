@@ -161,6 +161,14 @@
           "uuid": "sp42K",
           "to": "?p=42"
         }
+      },
+      {
+        "background": "casual.png",
+        "name": "Konopie katowickie 🌿 (2 lo)",
+        "add": {
+          "uuid": "2lo2K",
+          "to": "?p=2loK"
+        }
       }
     ],
     "codes": [
