@@ -161,6 +161,14 @@
           "uuid": "sp42K",
           "to": "?p=42"
         }
+      },
+      {
+        "background": "casual.png",
+        "name": "Konopie katowickie 🌿 (2 lo)",
+        "add": {
+          "uuid": "2lo2K",
+          "to": "?p=2loK"
+        }
       }
     ],
     "codes": [
@@ -170,24 +178,19 @@
         "to": "https://terrainstory.com/pomoz-abelardowi/#/jacobson"
       },
       {
-        "name": "emocje2",
+        "name": "psi",
         "uuid": "5d1306c1-b92c-4a27-b12c-2f57bf66c598",
-        "to": "https://terrainstory.com/pomoz-abelardowi/#/emocje2"
+        "to": "https://terrainstory.com/pomoz-abelardowi/#/psi"
       },
       {
-        "name": "emocje1",
+        "name": "emocje",
         "uuid": "aa36cb3c-7c96-470a-8867-e1b8d8ebd974",
-        "to": "https://terrainstory.com/pomoz-abelardowi/#/emocje1"
+        "to": "https://terrainstory.com/pomoz-abelardowi/#/emocje"
       },
       {
-        "name": "rozsypanka2",
+        "name": "slowo",
         "uuid": "3062f083-523f-4d5b-9001-250303668d00",
-        "to": "https://terrainstory.com/pomoz-abelardowi/#/rozsypanka2"
-      },
-      {
-        "name": "rozsypanka1",
-        "uuid": "5839e242-ccc9-486a-b9c0-4778357861e6",
-        "to": "https://terrainstory.com/pomoz-abelardowi/#/rozsypanka1"
+        "to": "https://terrainstory.com/pomoz-abelardowi/#/slowo"
       },
       {
         "name": "rebus",
@@ -198,11 +201,6 @@
         "name": "telefony-zaufania",
         "uuid": "c9043d2f-b43e-46c7-84e2-20eb5d81876d",
         "to": "https://terrainstory.com/pomoz-abelardowi/#/telefony-zaufania"
-      },
-      {
-        "name": "bingo",
-        "uuid": "675af230-c57e-47cc-9070-0d1177a7ae9b",
-        "to": "https://terrainstory.com/pomoz-abelardowi/#/bingo"
       }
     ]
   },
