@@ -169,6 +169,14 @@
           "uuid": "2lo2K",
           "to": "?p=2loK"
         }
+      },
+      {
+        "background": "casual.png",
+        "name": "Flobo",
+        "add": {
+          "uuid": "f",
+          "to": "?p=f"
+        }
       }
     ],
     "codes": [
