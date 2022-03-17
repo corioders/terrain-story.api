@@ -259,6 +259,14 @@
           "uuid": "pik",
           "to": "?p=pik"
         }
+      },
+      {
+        "background": "casual.png",
+        "name": "Zespół szkół nr 1 im Adama Mickiewicza w Lublińcu",
+        "add": {
+          "uuid": "nr1a",
+          "to": "?p=nr1a"
+        }
       }
     ],
     "codes": [
