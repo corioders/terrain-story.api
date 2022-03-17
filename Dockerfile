@@ -3,7 +3,7 @@ FROM golang:alpine AS builder
 COPY . /application
 
 WORKDIR /application/app
-RUN apk install git
+RUN apk add git
 RUN go build -o /api
 
 
