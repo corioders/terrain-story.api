@@ -169,6 +169,38 @@
           "uuid": "2lo2K",
           "to": "?p=2loK"
         }
+      },
+      {
+        "background": "casual.png",
+        "name": "Flobo",
+        "add": {
+          "uuid": "f",
+          "to": "?p=f"
+        }
+      },
+      {
+        "background": "casual.png",
+        "name": "Techinkum lotnicze kato",
+        "add": {
+          "uuid": "lot",
+          "to": "?p=lot"
+        }
+      },
+      {
+        "background": "casual.png",
+        "name": "Technikim nr 8 kato",
+        "add": {
+          "uuid": "tnr8",
+          "to": "?p=tnr8"
+        }
+      },
+      {
+        "background": "casual.png",
+        "name": "Technikum zdz kato",
+        "add": {
+          "uuid": "zdz",
+          "to": "?p=zdz"
+        }
       }
     ],
     "codes": [
@@ -226,6 +258,14 @@
         "add": {
           "uuid": "pik",
           "to": "?p=pik"
+        }
+      },
+      {
+        "background": "casual.png",
+        "name": "Zespół szkół nr 1 im Adama Mickiewicza w Lublińcu",
+        "add": {
+          "uuid": "nr1a",
+          "to": "?p=nr1a"
         }
       }
     ],
