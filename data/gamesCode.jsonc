@@ -15,7 +15,7 @@
         "to": "https://terrainstory.com"
       },
       {
-        "name": "mag - but to main page",
+        "name": "skarbek - but to main page",
         "uuid": "675af230-c57e-47cc-9070-0d1177a7ae9b",
         "to": "https://terrainstory.com"
       }
@@ -211,6 +211,14 @@
         "add": {
           "uuid": "zdz",
           "to": "?p=zdz"
+        }
+      },
+      {
+        "background": "casual.png",
+        "name": "Duaaaaalll mikooo",
+        "add": {
+          "uuid": "dual",
+          "to": "?p=dual"
         }
       }
     ],
