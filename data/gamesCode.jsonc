@@ -220,6 +220,22 @@
           "uuid": "dual",
           "to": "?p=dual"
         }
+      },
+      {
+        "background": "casual.png",
+        "name": "Duaaaaalll mikooo",
+        "add": {
+          "uuid": "dual",
+          "to": "?p=dual"
+        }
+      },
+      {
+        "background": "casual.png",
+        "name": "Centrum nauki kopernika w wwa",
+        "add": {
+          "uuid": "cnkwwa",
+          "to": "?p=cnkwwa"
+        }
       }
     ],
     "codes": [
