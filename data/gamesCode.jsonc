@@ -302,6 +302,14 @@
           "uuid": "nr1a",
           "to": "?p=nr1a"
         }
+      },
+      {
+        "background": "casual.png",
+        "name": "IX Liceum Ogólnokształcące im. Cypriana Kamila Norwida",
+        "add": {
+          "uuid": "nr9kn",
+          "to": "?p=nr9kn"
+        }
       }
     ],
     "codes": [
