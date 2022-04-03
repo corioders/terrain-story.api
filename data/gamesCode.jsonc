@@ -287,14 +287,14 @@
   // 
   "wygraj mature": {
     "addons": [
-      {
-        "name": "8lo katowice (pik)",
-        "background": "casual.png",
-        "add": {
-          "uuid": "pik",
-          "to": "?p=pik"
-        }
-      },
+      // {
+      //   "name": "8lo katowice (pik)",
+      //   "background": "casual.png",
+      //   "add": {
+      //     "uuid": "pik",
+      //     "to": "?p=pik"
+      //   }
+      // },
       {
         "background": "casual.png",
         "name": "Zespół szkół nr 1 im Adama Mickiewicza w Lublińcu",
@@ -387,6 +387,54 @@
         "name": "pytanie6",
         "uuid": "c9043d2f-b43e-46c7-84e2-20eb5d81876d",
         "to": "https://terrainstory.com/wygraj-mature/#/pytanie6"
+      }
+    ]
+  },
+  // 
+  // 
+  // finansowe zaskoczenie game
+  // 
+  "finansowe zaskoczenie - pik": {
+    "addons": [
+      {
+        "name": "8lo katowice (pik)",
+        "background": "casual.png",
+        "add": {
+          "uuid": "pik",
+          "to": "?p=pik"
+        }
+      }
+    ],
+    "codes": [
+      {
+        "name": "btc",
+        "uuid": "5d1306c1-b92c-4a27-b12c-2f57bf66c598",
+        "to": "https://terrainstory.com/finansowe-zaskoczenie/#/btc"
+      },
+      {
+        "name": "karta",
+        "uuid": "aa36cb3c-7c96-470a-8867-e1b8d8ebd974",
+        "to": "https://terrainstory.com/finansowe-zaskoczenie/#/karta"
+      },
+      {
+        "name": "crypto",
+        "uuid": "3062f083-523f-4d5b-9001-250303668d00",
+        "to": "https://terrainstory.com/finansowe-zaskoczenie/#/crypto"
+      },
+      {
+        "name": "inflacja",
+        "uuid": "5839e242-ccc9-486a-b9c0-4778357861e6",
+        "to": "https://terrainstory.com/finansowe-zaskoczenie/#/inflacja"
+      },
+      {
+        "name": "roznice",
+        "uuid": "1e2bedac-eed9-4974-8667-e50796fa072a",
+        "to": "https://terrainstory.com/finansowe-zaskoczenie/#/roznice"
+      },
+      {
+        "name": "pytanie6",
+        "uuid": "675af230-c57e-47cc-9070-0d1177a7ae9b",
+        "to": "https://terrainstory.com/finansowe-zaskoczenie/#/pytanie6"
       }
     ]
   }
