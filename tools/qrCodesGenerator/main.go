@@ -10,6 +10,7 @@ import (
 	"path"
 
 	"golang.org/x/image/draw"
+	"golang.org/x/sync/errgroup"
 
 	"github.com/corioders/terrain-story.api/model/gamesCodeModel"
 	"github.com/skip2/go-qrcode"
@@ -66,23 +67,32 @@ func generateTerrainGame(rootFolder string, terrainGame gamesCodeModel.TerrainGa
 		return nil
 	}
 
+	eg := errgroup.Group{}
+
 	for _, addon := range terrainGame.Addons {
-		addonFolder := path.Join(rootFolder, addon.Name)
+		localAddon := addon
+		addonFolder := path.Join(rootFolder, localAddon.Name)
 		err := mkdirAll(addonFolder)
 		if err != nil {
 			return err
 		}
 
 		for _, code := range terrainGame.Codes {
-			code.Uuid += addon.Add.Uuid
-			err := generateCode(addonFolder, code, addon.GetBackground())
-			if err != nil {
-				return err
-			}
+			// We need to redeclare this variable, in other case this happens https://dev.to/kkentzo/the-golang-for-loop-gotcha-1n35.
+			localCode := code
+			eg.Go(func() error {
+				localCode.Uuid += localAddon.Add.Uuid
+				err := generateCode(addonFolder, localCode, localAddon.GetBackground())
+				if err != nil {
+					return err
+				}
+				return nil
+			})
+
 		}
 	}
 
-	return nil
+	return eg.Wait()
 }
 
 //go:embed background/*
