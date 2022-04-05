@@ -113,6 +113,10 @@ var backgroundMap = map[gamesCodeModel.Background]*backgroundDetails{
 		codeSize: 550,
 		pt:       image.Pt(940, 700),
 	},
+	gamesCodeModel.QuizLekturowyCasualBackground: {
+		codeSize: 550,
+		pt:       image.Pt(940, 700),
+	},
 }
 
 func init() {

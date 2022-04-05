@@ -16,12 +16,13 @@ type Background string
 
 const DefaultBackground = NoneBackground
 const (
-	NoneBackground   Background = "none"
-	NormalBackground Background = "normal.png"
-	CasualBackground Background = "casual.png"
+	NoneBackground                Background = "none"
+	NormalBackground              Background = "normal.png"
+	CasualBackground              Background = "casual.png"
+	QuizLekturowyCasualBackground Background = "quiz lekturowy/casual.png"
 )
 
-var AllBackgrounds = []Background{NormalBackground, CasualBackground}
+var AllBackgrounds = []Background{NormalBackground, CasualBackground, QuizLekturowyCasualBackground}
 
 type AddonJson struct {
 	Name       string     `json:"name"`

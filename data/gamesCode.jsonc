@@ -437,5 +437,53 @@
         "to": "https://terrainstory.com/finansowe-zaskoczenie/#/pytanie6"
       }
     ]
+  },
+  // 
+  // 
+  // quiz lekturowy game
+  // 
+  "quiz lekturowy": {
+    "addons": [
+      {
+        "background": "quiz lekturowy/casual.png",
+        "name": "Konopie katowickie 🌿 (2 lo)",
+        "add": {
+          "uuid": "2lo2K",
+          "to": "?p=2loK"
+        }
+      }
+    ],
+    "codes": [
+      {
+        "name": "pytanie1",
+        "uuid": "47df5d00-e862-4e3b-9325-a9f76d90bac3",
+        "to": "https://terrainstory.com/wygraj-mature/#/pytanie1"
+      },
+      {
+        "name": "pytanie2",
+        "uuid": "4d178969-c8fb-43dd-b93e-888053e7bbbe",
+        "to": "https://terrainstory.com/wygraj-mature/#/pytanie2"
+      },
+      {
+        "name": "pytanie3",
+        "uuid": "b908dfa5-53de-4003-9fb9-2c691918eb60",
+        "to": "https://terrainstory.com/wygraj-mature/#/pytanie3"
+      },
+      {
+        "name": "pytanie4",
+        "uuid": "536e1d8a-418e-4cfd-95f5-de42308c816f",
+        "to": "https://terrainstory.com/wygraj-mature/#/pytanie4"
+      },
+      {
+        "name": "pytanie5",
+        "uuid": "a45f3948-6660-49a7-9fbc-a4b982781145",
+        "to": "https://terrainstory.com/wygraj-mature/#/pytanie5"
+      },
+      {
+        "name": "pytanie6",
+        "uuid": "6e4edafe-7f37-444a-af94-20057442b152",
+        "to": "https://terrainstory.com/wygraj-mature/#/pytanie6"
+      }
+    ]
   }
 }
