@@ -403,6 +403,14 @@
           "uuid": "pik",
           "to": "?p=pik"
         }
+      },
+      {
+        "background": "casual.png",
+        "name": "Konopie katowickie 🌿 (2 lo)",
+        "add": {
+          "uuid": "2lo2K",
+          "to": "?p=2loK"
+        }
       }
     ],
     "codes": [
