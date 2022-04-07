@@ -394,6 +394,51 @@
   // 
   // finansowe zaskoczenie game
   // 
+  "finansowe zaskoczenie": {
+    "addons": [
+      {
+        "background": "casual.png",
+        "name": "Konopie katowickie 🌿 (2 lo)",
+        "add": {
+          "uuid": "2lo2K",
+          "to": "?p=2loK"
+        }
+      }
+    ],
+    "codes": [
+      {
+        "name": "btc",
+        "uuid": "ee0089ed-4da4-4b1b-a81b-ddca777f54a3",
+        "to": "https://terrainstory.com/finansowe-zaskoczenie/#/btc"
+      },
+      {
+        "name": "karta",
+        "uuid": "f5a37b3e-c607-4c6b-baa2-ea24213de4da",
+        "to": "https://terrainstory.com/finansowe-zaskoczenie/#/karta"
+      },
+      {
+        "name": "crypto",
+        "uuid": "83999825-03df-4c56-92fc-2202c8e5b87f",
+        "to": "https://terrainstory.com/finansowe-zaskoczenie/#/crypto"
+      },
+      {
+        "name": "inflacja",
+        "uuid": "ca3a116f-4822-43a4-8d15-9d639945d1b5",
+        "to": "https://terrainstory.com/finansowe-zaskoczenie/#/inflacja"
+      },
+      {
+        "name": "roznice",
+        "uuid": "de392771-1e0d-481c-90a1-16e5234c5780",
+        "to": "https://terrainstory.com/finansowe-zaskoczenie/#/roznice"
+      },
+      {
+        "name": "rebus",
+        "uuid": "453f5735-625e-487c-99dc-c7a1271646e1",
+        "to": "https://terrainstory.com/finansowe-zaskoczenie/#/rebus"
+      }
+    ]
+  },
+  // 
   "finansowe zaskoczenie - pik": {
     "addons": [
       {
@@ -402,14 +447,6 @@
         "add": {
           "uuid": "pik",
           "to": "?p=pik"
-        }
-      },
-      {
-        "background": "casual.png",
-        "name": "Konopie katowickie 🌿 (2 lo)",
-        "add": {
-          "uuid": "2lo2K",
-          "to": "?p=2loK"
         }
       }
     ],
